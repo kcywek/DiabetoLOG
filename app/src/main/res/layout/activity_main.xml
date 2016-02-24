@@ -42,11 +42,20 @@
         android:layout_alignBottom="@+id/button_add"
         android:layout_toEndOf="@+id/button_add" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rect"
-        android:layout_below="@+id/button_add"></LinearLayout>
+        android:id="@+id/horizontalScrollView"
+        android:layout_below="@+id/button_add">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rect"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button_add"></LinearLayout>
+    </HorizontalScrollView>
 
 </RelativeLayout>
