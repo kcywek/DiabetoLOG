@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                             while (res.moveToNext()){
                                 buffer.append("DATE:" + res.getString(0) +"\n");
                                 buffer.append("SUGAR_LEVEL:" + res.getString(1)+"\n");
-                                buffer.append("--------------------------------\n");
+                                buffer.append("----------------------------\n");
 
                             }
                         showMessage("Wprowadzone Wyniki", buffer.toString());
