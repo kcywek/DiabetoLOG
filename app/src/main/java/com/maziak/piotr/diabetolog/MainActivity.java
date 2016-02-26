@@ -115,7 +115,10 @@ public class MainActivity extends AppCompatActivity {
        Bitmap bg = Bitmap.createBitmap(1920, 700, Bitmap.Config.ARGB_8888);
        Canvas canvas = new Canvas(bg);
        /* canvas.drawLine(0, 6, 480,6, paint);
-
+        canvas.drawLine(0, 100, 480,100, paint);
+        canvas.drawLine(0, 200, 480,200, paint);
+        canvas.drawLine(0, 300, 480,300, paint);
+        canvas.drawLine(0, 400, 480,400, paint);
         canvas.drawLine(0, 500, 480,500, paint);*/
         //edit on githu
 
