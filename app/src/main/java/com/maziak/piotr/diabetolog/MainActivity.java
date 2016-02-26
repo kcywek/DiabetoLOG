@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         canvas.drawLine(0, 200, 480,200, paint);
         // edytowane w as
         canvas.drawLine(0, 300, 480,300, paint);
-//gh
+//gh gh gh
         canvas.drawLine(0, 400, 480,400, paint);
         canvas.drawLine(0, 500, 480,500, paint);*/
         //edit on githu
