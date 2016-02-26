@@ -6,6 +6,8 @@ package com.maziak.piotr.diabetolog;
  * 2 edit w as poprawiona zmiana
 
  * 1 edit w git hubie
+ *
+ * zmiana
 
  */
 public class testowaniegithuba {
