@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         canvas.drawLine(0, 100, 480,100, paint);
         canvas.drawLine(0, 200, 480,200, paint);
+        // gh gh
         // edytowane w as
         canvas.drawLine(0, 300, 480,300, paint);
 //gh
