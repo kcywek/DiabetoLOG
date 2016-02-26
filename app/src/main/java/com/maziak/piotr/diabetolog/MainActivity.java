@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editSugarLevel;
     Button btnAddData;
     Button btnViewData;
+    Button btnDeleteData;
 
 
 
@@ -38,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         editSugarLevel = (EditText)findViewById(R.id.editText2);
         btnAddData = (Button)findViewById(R.id.button_add);
         btnViewData = (Button)findViewById(R.id.button);
+        btnDeleteData = (Button)findViewById(R.id.button_delete);
         addData();
         viewAll();
         rysowanko();
+        DeleteData();
 
 
     }
@@ -75,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                             while (res.moveToNext()){
                                 buffer.append("DATE:" + res.getString(0) +"\n");
                                 buffer.append("SUGAR_LEVEL:" + res.getString(1)+"\n");
-                                buffer.append("--------------------------------------\n");
+                                buffer.append("--------------------------------\n");
 
                             }
                         showMessage("Wprowadzone Wyniki", buffer.toString());
@@ -94,26 +97,31 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
     public void rysowanko() {
+
         LinearLayout ll = (LinearLayout) findViewById(R.id.rect);
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#CD5C5C"));
         paint.setStrokeWidth(1);
         Paint paint2 = new Paint();
         paint2.setColor(Color.parseColor("#00ee44"));
-        paint2.setStrokeWidth(3);
-        Bitmap bg = Bitmap.createBitmap(480, 800, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bg);
-        canvas.drawLine(0, 6, 480,6, paint);
+        paint2.setStrokeWidth(6);
+
+
+
+        Cursor res =  myDB.getAllData();
+
+       int szerokosc = res.getCount()*20;
+       Bitmap bg = Bitmap.createBitmap(1920, 700, Bitmap.Config.ARGB_8888);
+       Canvas canvas = new Canvas(bg);
+       /* canvas.drawLine(0, 6, 480,6, paint);
         canvas.drawLine(0, 100, 480,100, paint);
         canvas.drawLine(0, 200, 480,200, paint);
         canvas.drawLine(0, 300, 480,300, paint);
         canvas.drawLine(0, 400, 480,400, paint);
-        canvas.drawLine(0, 500, 480,500, paint);
-        ll.setBackgroundDrawable(new BitmapDrawable(bg));
-        Cursor res =  myDB.getAllData();
+        canvas.drawLine(0, 500, 480,500, paint);*/
 
-        int szerokosc = res.getCount();
-        int ofset = 480/szerokosc;
+
+        int ofset = 9;
         int i = 0;
         int j = 0;
         int k = ofset;
@@ -127,8 +135,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        ll.setBackgroundDrawable(new BitmapDrawable(bg));
 
     }
+public void DeleteData() {
+    btnDeleteData.setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   Integer deletedData = myDB.deleteData();
+
+
+                }
+            }
+    );
+
+}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
