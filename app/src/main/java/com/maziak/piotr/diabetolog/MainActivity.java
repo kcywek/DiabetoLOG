@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
        zmiana w git hubie
         canvas.drawLine(0, 500, 480,500, paint);*/
-        //edit on git
+        //edit on gi
 
 
         int ofset = 9;
